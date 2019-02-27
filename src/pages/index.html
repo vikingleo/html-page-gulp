@@ -1,0 +1,17 @@
+@@include('../common/header.html',{"title":"首页"})
+<style>
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+</style>
+@@include('../common/navbar.html')
+
+<div class="container">
+    <h1>gulp自动编译HTML静态页</h1>
+    <p>@@include ：载入html</p>
+    <p>@@title 使用@@include第二参数中的json属性，title是key</p>
+    <p class="text-red">注意，@@include的第二参数必须是json标准，即 <strong>{"key":"value"}</strong>格式</p>
+</div>
+
+@@include('../common/footer.html')
