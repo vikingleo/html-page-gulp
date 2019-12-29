@@ -14,7 +14,7 @@ npm install
 
 ## 使用
 ```bash
-gulp watch # 监听总方法
-gulp fileInclude # 手动合并html
-gulp scss # 手动编译css
+gulp watch / npm run watch # 监听总方法
+gulp html / npm run html # 手动合并html
+... 具体看package.json
 ```
