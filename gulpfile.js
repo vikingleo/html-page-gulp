@@ -58,20 +58,26 @@ gulp.task('rev', () =>
 )
 const babelSrc = ['src/**/*.es6']
 // babel
-gulp.task('babel', () =>
+gulp.task('generateBabel', () =>
     gulp.src(babelSrc)
         .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['@babel/env']
         }))
         // .pipe(rename())
+        .pipe(rev())
         .pipe(gulp.dest('dist'))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('dist/rev'))
 );
 // ts编译
 const tsUrl = ['src/assets/js/**/*.ts']
-gulp.task('ts', () => gulp.src(tsUrl)
+gulp.task('generateTs', () => gulp.src(tsUrl)
     .pipe(ts({ declaration: true }))
+    .pipe(rev())
     .pipe(gulp.dest('dist/assets/js'))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('dist/rev'))
 )
 
 
@@ -81,16 +87,22 @@ gulp.task('html', gulp.series(['generateHtml', 'rev']))
 // 生成带md5后缀带css文件，并且替换html的后缀
 gulp.task('scss', gulp.series(['generateScss', 'rev']))
 
+// 生成带md5后缀带css文件，并且替换html的后缀
+gulp.task('babel', gulp.series(['generateBabel', 'rev']))
+
+// 生成带md5后缀带css文件，并且替换html的后缀
+gulp.task('ts', gulp.series(['generateTs', 'rev']))
+
 // 默认任务
 gulp.task('default', gulp.parallel(['scss', 'html', 'ts', 'babel', 'copy']))
 //监听
 gulp.task('watch', function () {
     // 监听src内所有html
-    gulp.watch('src/**/*.html', gulp.series(['html']));
+    gulp.watch('src/**/*.html', gulp.series(['scss', 'html']));
     // 监听src内所有css
-    gulp.watch('src/**/*.scss', gulp.series(['scss']));
+    gulp.watch('src/**/*.scss', gulp.series(['scss', 'html']));
     // 监听src内所有ts
-    gulp.watch('src/**/*.ts', gulp.series(['ts']))
+    gulp.watch('src/**/*.ts', gulp.series(['ts', 'html']))
     // 监听src内所有es6
-    gulp.watch('src/**/*.es6', gulp.series(['babel']))
+    gulp.watch('src/**/*.es6', gulp.series(['babel', 'html']))
 });
