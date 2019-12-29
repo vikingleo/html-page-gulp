@@ -1,0 +1,18 @@
+// 登录
+$bgi: '/images-v1.0/login_bg.jpg';
+.page-login {
+  background: {
+    image: url($bgi);
+    size:  100% 100%;
+    position: top center;
+    repeat: no-repeat;
+  };
+}
+
+.login-form-box {
+  top: 0;
+  left: 50%;
+  margin-left: -200px;
+  background-color: rgba(#fff,.8);
+  width: 400px;
+}

@@ -1,0 +1,111 @@
+
+.basic-icon {
+    font-size: unset;
+  }
+  
+  // bootstrap覆盖样式
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  .help-block-error {
+    color: $red;
+  }
+  
+  .layui-layer-btn .layui-layer-btn0 {
+    color: #fff !important;
+  }
+  
+  .form-group {
+    .bootstrap-tagsinput {
+      @extend .form-control;
+    }
+  }
+  
+  // 公共
+  ul {
+    margin: 0;
+    padding: 0;
+  
+    li {
+      list-style-type: none;
+    }
+  }
+  
+  // 扩展
+  .h {
+    &-0 {
+      height: 0 !important;
+    }
+  }
+  
+  .w {
+    &-0 {
+      width: 0;
+    }
+  }
+  
+  .dataview-table {
+    td {
+      font-size: $font-size-sm;
+    }
+  }
+  
+  
+  .m {
+    &t {
+      &-20-reverse {
+        margin-top: -20px;
+      }
+    }
+  
+    &b {
+      &-20-reverse {
+        margin-bottom: -20px;
+      }
+    }
+  
+  }
+  
+  // main布局class
+  .main-body {
+    padding: $main-body-padding;
+    min-height: 100%;
+  
+    .clear-padding {
+      margin: -$main-body-padding;
+  
+      &-x {
+        margin-left: -$main-body-padding;
+        margin-right: -$main-body-padding;
+   
+        &-t {
+          @extend .clear-padding-x;
+          margin-top: -$main-body-padding;
+        }
+      }
+  
+      &-y {
+        margin-top: -$main-body-padding;
+        margin-bottom: -$main-body-padding;
+      }
+  
+      &-t {
+        margin-top: -$main-body-padding;
+      }
+  
+      &-b {
+        margin-bottom: -$main-body-padding;
+      }
+  
+      &-l {
+        margin-left: -$main-body-padding;
+      }
+  
+      &-r {
+        margin-right: -$main-body-padding;
+      }
+    }
+  } 

@@ -1,0 +1,59 @@
+// 下拉选择器
+.input-selector {
+  position: relative;
+
+  &_control {
+
+  }
+
+  &_panel {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    top: 37px;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(#000, .3);
+    min-width: 200px;
+    &__body {
+      max-height: 200px;
+      overflow-y: auto;
+      width: 100%;
+      flex: 1;
+
+    }
+
+    &__footer {
+      max-height: 200px;
+      width: 100%;
+    }
+
+    .select-item {
+      padding: 5px 10px;
+      background-color: #fff;
+      width: 100%;
+      display: block;
+      white-space: nowrap;
+      border: 0;
+      outline: none;
+
+      &:hover, &:focus {
+        background-color: #f2f2f2;
+        color: #136dff;
+      }
+
+      &:active {
+        background-color: #eee;
+      }
+    }
+
+    &.active {
+      display: flex;
+    }
+
+  }
+}

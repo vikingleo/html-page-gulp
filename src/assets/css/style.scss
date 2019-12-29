@@ -1,6 +1,15 @@
-@import "../basic-style/basic-style";
+@charset "UTF-8";
 
-body {
-  background: #fff;
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-}
+@import "./ui-framework/bootstrap";
+@import "./bootstrap-theme/bootstrap";
+@import "./custom/animate";
+@import "./custom/global";
+@import "./custom/components/top-navbar";
+@import "./custom/components/section-title";
+@import "./custom/components/timeline";
+@import "./custom/components/tags-select";
+@import "./custom/components/input-selector";
+@import "./custom/components/upload-preview";
+@import "./custom/components/side-bar";
+@import "./pages/index";
+@import "./pages/login"; 

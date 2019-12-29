@@ -1,0 +1,30 @@
+.tags-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .tag-dropdown-btn {
+    outline: none;
+  }
+
+  .tags-dropdown {
+    padding: 15px;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 150px;
+    display: none;
+    box-shadow: 0 5px 10px rgba(#000, .3);
+    border-radius: 4px;
+
+    .tag-item {
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #262626;
+      background-color: #eeeeee;
+      margin: 5px;
+    }
+  }
+}

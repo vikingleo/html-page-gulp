@@ -1,0 +1,15 @@
+.section-title {
+  .title {
+    border-bottom: 3px solid #333;
+    line-height: 2;
+    font-size: 20px;
+  }
+
+  &.line-fluid {
+    border-bottom: 3px solid #333;
+
+    .title {
+      border-bottom: 0;
+    }
+  }
+}
