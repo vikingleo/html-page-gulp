@@ -1,0 +1,40 @@
+.v-popup {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;  
+    top: 0;
+    z-index: 99;  
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+
+.v-toast {
+    min-width: 100px;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.v-toast .v-content {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+}
+
+.v-toast .v-icon {
+    width: 50px;
+    background-color: rgb(204, 2, 2);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+}
